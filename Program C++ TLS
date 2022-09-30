@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int jumlah,pesanan;                                                                             //deklarasi variabel pesanan dan jumlah barang yang akan dipesan
+double total=0;                                                                                 //deklarasi total harga
+double hargapesanan[6]{9000,11000,10000,10000,2000,3000};                                       //array mengenai harga setiap pesanan
+
+int main()
+{
+    cout<<"Menu:\n"<<"================\n";
+    cout<<"1. Orak-Arik\n 2. Magelangan\n 3. Nasi Goreng\n";                                    //daftar menu
+    cout<<"4. Mie Omelet\n 5. Es Teh\n 6. Es Jeruk\n\n";
+    
+    cout<<"Masukkan Menu yang akan Dipesan dengan Format Nomor Menu (Enter) Jumlah (Enter)\n";  //cara menggunakan
+    cout<<"Tekan 0 Jika Sudah Tidak Ingin Menambah Pesanan Lagi:\n";
+    cin>>pesanan>>jumlah;                                                                       //inisiasi input
+    
+    while (pesanan !=0)                                                                         //loop untuk mendaftarkan pesanan
+        {
+            total = total + hargapesanan[pesanan-1]*jumlah;
+            cout<<"Total: "<<total<<"\n\n";
+            cin>>pesanan;
+            if(pesanan!=0)
+            cin>>jumlah;
+            else
+            break;                                                                              //jika sudah selesai, pengguna bisa mengisi pesanan sebagai 0 untuk mengakhiri loop
+        }
+    cout<<"\n================\nTotal Harga: "<<total;
+  
+   
+    return 0;
+}
